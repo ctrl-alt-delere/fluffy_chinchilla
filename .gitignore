@@ -1,0 +1,19 @@
+# Ignore CLion project settings
+.idea/
+*.iml
+
+# Ignore CMake build directory
+cmake-build-debug/
+cmake-build-release/
+
+# Ignore executable binary
+banking_project_
+
+# Ignore object files
+*.o
+
+# Ignore output binaries (if you use a.out or others)
+*.out
+
+
+
