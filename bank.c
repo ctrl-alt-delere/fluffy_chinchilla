@@ -11,7 +11,6 @@
 char login[50];
 long int  Account_number;
 
-
 void admin_menu() {
     char admin_input1;
     printf("--------------Admin menu-------------");
@@ -21,6 +20,8 @@ void admin_menu() {
     printf("Enter your choice: ");
     scanf("%c", &admin_input1);
     while (getchar() != '\n');
+
+
 
 
 
