@@ -265,7 +265,6 @@ int account_creation_information_collection() {
     acc->accountNumber = accountNumber;
 
 
-
     saveAccountToFile(acc);
 
     free(acc);
@@ -334,14 +333,10 @@ void delete_account(long int accountNumber) {
             printf("Account %ld successfully deleted.", accountNumber);
         }else {
             printf("Error: Account %ld could not be deleted.", accountNumber);
-            bank_menu();
-            return;
         }
     }else {
         printf("Error: Too many incorrect password attempts. Account deletion aborted.");
 
-    }
-    bank_menu();
 }
 
 //function_to_load_all_accounts
@@ -350,7 +345,6 @@ void load_all_accounts() {
     DIR *dirp = opendir(".");
 
     if (dirp == NULL) {
-        printf("Error: Account  not found.\n");
         return;
     }
 
