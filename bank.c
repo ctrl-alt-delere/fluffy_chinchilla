@@ -10,6 +10,34 @@
 char login[50];
 long int  Account_number;
 
+
+void bank_menu() {
+    char bank_menu_input1;
+    printf("________________/ Login/Sign up /_______________\n");
+    printf("1. Create a new account\n");
+    printf("2. Log in\n");
+    printf("3. Exit\n");
+
+    scanf("%c", &bank_menu_input1);
+    while (getchar() != '\n');
+
+
+
+    switch (bank_menu_input1) {
+        case '1':
+            account_creation_information_collection();
+            bank_menu();
+            break;
+        case '2':
+            account_login();
+            break;
+        case '3':
+            break;
+    }
+}
+
+
+
 void admin_menu() {
     char admin_input1;
     printf("--------------Admin menu-------------");
@@ -458,30 +486,4 @@ void account_login() {
 }
 
 
-
-
-void bank_menu() {
-    char bank_menu_input1;
-    printf("________________/ Login/Sign up /_______________\n");
-    printf("1. Create a new account\n");
-    printf("2. Log in\n");
-    printf("3. Exit\n");
-
-    scanf("%c", &bank_menu_input1);
-    while (getchar() != '\n');
-
-
-
-    switch (bank_menu_input1) {
-        case '1':
-            account_creation_information_collection();
-            bank_menu();
-            break;
-        case '2':
-            account_login();
-            break;
-        case '3':
-            break;
-    }
-}
 

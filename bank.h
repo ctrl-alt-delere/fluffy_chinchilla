@@ -4,6 +4,7 @@
 
 #ifndef BANK_H
 #define BANK_H
+#include <stdbool.h>
 
 void bank_menu();
 void account_login();

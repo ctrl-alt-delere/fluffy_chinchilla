@@ -6,8 +6,9 @@
 #include <time.h>
 #include <ctype.h>
 #include <dirent.h>
+#include "bank.h"
 
-char admin_password[50] = "56@23_78";
+const char *admin_password = "56@23_78";
 
 
 void capitalizeString(char *str) {

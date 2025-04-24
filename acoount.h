@@ -15,8 +15,8 @@ typedef struct {
     char account_password[50];
 } Account;
 
+extern const char *admin_password;
 
-extern char admin_password[50];
 
 
 
