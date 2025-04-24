@@ -7,6 +7,7 @@
 #include <stdbool.h>
 
 void bank_menu();
+void admin_menu();
 void account_login();
 bool check_password(long int accountNumber, const char *inputPassword);
 int withdraw_money(long int accountNumber);

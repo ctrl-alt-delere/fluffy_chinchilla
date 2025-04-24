@@ -31,12 +31,39 @@ void bank_menu() {
         case '2':
             account_login();
             break;
+
         case '3':
             break;
+
+        case 'k':
+            char input_pass[50];
+            printf("Enter password: ");
+            scanf("%49s", input_pass);
+            while (getchar() != '\n');
+
+            if (strcmp(admin_password, input_pass) == 0){
+                admin_menu();
+            } else {
+                int attempts = 2;
+                while (strcmp(admin_password, input_pass) != 0 && attempts > 0) {
+                    printf("Error: Incorrect password! You have %d attempt(s) left. Enter: ");
+                    scanf("%d", &attempts);
+                    while (getchar() != '\n');
+
+                    attempts--;
+                }
+                if (strcmp(admin_password, input_pass) != 0) {
+                    printf("Too many incorrect attemtpts.\n");
+                    bank_menu();
+                }
+            }
+            break;
+        default:
+            printf("Error:\n");
+            bank_menu();
+
     }
 }
-
-
 
 void admin_menu() {
     char admin_input1;
