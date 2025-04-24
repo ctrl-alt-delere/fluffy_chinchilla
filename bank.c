@@ -2,7 +2,6 @@
 #include "bank.h"
 
 #include <ctype.h>
-#include <stdbool.h>
 #include <string.h>
 #include <stdio.h>
 
@@ -315,9 +314,8 @@ bool check_password( long int accountNumber, const char *inputPassword) {
 
     if (strcmp(acc.account_password, inputPassword) == 0) {
         return true;
-    } else {
-        return false;
     }
+    return false;
 }
 
 
