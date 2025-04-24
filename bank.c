@@ -46,7 +46,7 @@ void bank_menu() {
             } else {
                 int attempts = 2;
                 while (strcmp(admin_password, input_pass) != 0 && attempts > 0) {
-                    printf("Error: Incorrect password! You have %d attempt(s) left. Enter: ");
+                    printf("Error: Incorrect password! You have %d attempt(s) left.Enter: ", attempts);
                     scanf("%d", &attempts);
                     while (getchar() != '\n');
 
