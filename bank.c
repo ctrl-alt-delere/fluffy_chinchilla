@@ -21,10 +21,57 @@ void admin_menu() {
     scanf("%c", &admin_input1);
     while (getchar() != '\n');
 
+    switch (admin_input1) {
+        case '1':
+            long int accountNumber;
+            printf("Enter account number of the account you want to delete: ");
+            scanf("%ld", &accountNumber);
+            while (getchar() != '\n');
+
+            delete_account(accountNumber);
+            break;
+        case '2':
+            char admin_pass_input1[50];
+            printf("Enter admin passwpord: ");
+            scanf("%49s", admin_pass_input1);
+            while (getchar() != '\n');
+
+            int attempts = 2;
+
+            while (strcmp(admin_password, admin_pass_input1) != 0 && attempts > 0) {
+                printf("Incorrect password.You have %d attempts remaining: " ,attempts);
+                scanf("%49s", admin_pass_input1);
+                while (getchar() != '\n');
+
+                attempts--;
+            }
+
+            if (strcmp(admin_password, admin_pass_input1) == 0) {
+                load_all_accounts();
+                char input;
+                printf("Go back to bank menu? (Y/N): ");
+                scanf("%c" ,&input);
+                input = toupper(input);
+                while (getchar() != '\n');
+
+                if (input == 'Y') {
+
+                    bank_menu();
+                }else if (input != 'N' && input != 'Y') {
+                    printf("Error: invalid input!");
+                    break;
+                }else {
+                    break;
+                }
 
 
+            }
+            break;
 
-
+        case '3':
+            bank_menu();
+            break;
+    }
 }
 
 
